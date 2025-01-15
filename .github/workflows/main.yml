@@ -18,7 +18,7 @@ jobs:
 
       # Étape 2 : Déployer un fichier précis
       - name: Deploy a single file to FTP
-        uses: S SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USRE}}
