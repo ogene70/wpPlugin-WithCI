@@ -21,7 +21,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USRE}}
+          username: ${{ secrets.SERVER_USER}}
           password: ${{ secrets.SERVER_USER_PASSWORD }}
           local-dir: ./sae501plugin.php # Chemin du fichier local
           server-dir: /httpdocs/wp-content/plugins/sae501/ # Répertoire distant
