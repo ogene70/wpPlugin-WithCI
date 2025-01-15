@@ -1,0 +1,27 @@
+name: Deploy a specific file to FTP
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+      branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Étape 1 : Vérifier le code source
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      # Étape 2 : Déployer un fichier précis
+      - name: Deploy a single file to FTP
+        uses: S SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USRE}}
+          password: ${{ secrets.SERVER_USER_PASSWORD }}
+          local-dir: ./sae501plugin.php # Chemin du fichier local
+          server-dir: /httpdocs/wp-content/plugins/sae501/ # Répertoire distant
